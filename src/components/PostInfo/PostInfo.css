@@ -1,0 +1,10 @@
+.post-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.post {
+  flex: 0 0 20%;
+  margin-bottom: 20px;
+}
