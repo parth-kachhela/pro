@@ -1,61 +1,102 @@
-/* Container for the entire profile details */
 .profile-details {
-  background-color: #f9f9f9;
-  max-width: 400px;
-  height: 300px;
-  margin: 20px auto;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  font-family: "Arial", sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(211, 213, 208);
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Initially moved down */
+  animation: fadeInUp 1s forwards ease-in-out; /* Smooth fade-in */
 }
 
-/* Header section with profile picture and name */
-.profile-header {
-  margin-bottom: 20px;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Styling for the profile picture */
 .profile-picture {
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  margin-bottom: 100px;
   object-fit: cover;
-  border: 5px solid #007bff;
+  border: 2px solid #007bff;
+  opacity: 0; /* Initially hidden */
+  transform: scale(0.8); /* Initially shrunk */
+  animation: popIn 0.8s 0.3s forwards ease-in-out; /* Delay for better effect */
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-info {
+  flex-grow: 1;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideIn 0.8s 0.5s forwards ease-in-out; /* Delay for staggered effect */
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.profile-info h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.follow-stats {
+  display: flex;
+  gap: 30px;
   margin-bottom: 15px;
 }
 
-/* Styling for the user's name */
-.profile-header h1 {
-  font-size: 1.5em;
-  color: #333;
+.stat {
+  text-align: center;
+}
+
+.stat h2 {
+  font-size: 1.2em;
   margin: 0;
+  color: #333;
 }
 
-/* Styling for the profile information section */
-.profile-info p {
-  font-size: 1.1em;
-  margin: 5px 0;
-  opacity: 0.7;
-  line-height: 1.6;
+.stat p {
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 5px;
 }
 
-/* Highlighting labels in profile information */
-.profile-info strong {
-  color: #007bff;
+.bio {
+  font-size: 1em;
+  color: #666;
+  margin-top: 10px;
+  max-width: 400px;
+  line-height: 1.5;
 }
 
-/* Adding subtle hover effect on profile information */
-.profile-info p:hover {
-  opacity: 1;
-}
-
-/* Responsive design for smaller screens */
 @media (max-width: 768px) {
-  .profile-details {
-    padding: 20px;
-    margin: auto auto;
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
   }
 
   .profile-picture {
@@ -63,11 +104,8 @@
     height: 120px;
   }
 
-  .profile-header h1 {
-    font-size: 1.8em;
-  }
-
-  .profile-info p {
-    font-size: 0.5em;
+  .follow-stats {
+    justify-content: center;
+    gap: 20px;
   }
 }
