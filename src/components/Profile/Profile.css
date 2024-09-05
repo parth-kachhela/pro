@@ -1,31 +1,73 @@
+/* Container for the entire profile details */
 .profile-details {
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: #f9f9f9;
+  max-width: 400px;
+  height: 300px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-family: "Arial", sans-serif;
 }
 
+/* Header section with profile picture and name */
 .profile-header {
   margin-bottom: 20px;
 }
 
+/* Styling for the profile picture */
 .profile-picture {
-  width: 150px;
-  height: 150px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
+  border: 5px solid #007bff;
   margin-bottom: 15px;
 }
 
-.profile-info p {
-  margin: 10px 0;
-  font-size: 1.1rem;
+/* Styling for the user's name */
+.profile-header h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 0;
 }
 
-strong {
-  font-weight: bold;
-  color: #333;
+/* Styling for the profile information section */
+.profile-info p {
+  font-size: 1.1em;
+  margin: 5px 0;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+/* Highlighting labels in profile information */
+.profile-info strong {
+  color: #007bff;
+}
+
+/* Adding subtle hover effect on profile information */
+.profile-info p:hover {
+  opacity: 1;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .profile-details {
+    padding: 20px;
+    margin: auto auto;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-header h1 {
+    font-size: 1.8em;
+  }
+
+  .profile-info p {
+    font-size: 0.5em;
+  }
 }

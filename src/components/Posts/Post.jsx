@@ -1,7 +1,9 @@
 import React from "react";
 import "./Post.css";
 
-const Post = ({ title, content, image }) => {
+const Post = ({ post }) => {
+  const { title, content, image } = post;
+  console.log(post);
   return (
     <div className="post">
       <img className="post-image" src={image} alt={title} />
